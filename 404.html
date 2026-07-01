@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background: linear-gradient(135deg, #1f1cff, #5b6cff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .error-card{
+            background: white;
+            border-radius: 25px;
+            padding: 50px;
+            text-align: center;
+            max-width: 700px;
+            box-shadow: 0 15px 40px rgba(0,0,0,.2);
+        }
+
+        .error-code{
+            font-size: 120px;
+            font-weight: 900;
+            color: #1f1cff;
+            line-height: 1;
+        }
+
+        .error-icon{
+            font-size: 80px;
+        }
+
+        .btn-home{
+            background-color: #1f1cff;
+            color: white;
+            border-radius: 30px;
+            padding: 12px 30px;
+        }
+
+        .btn-home:hover{
+            background-color: #1714d9;
+            color: white;
+        }
+
+        .floating{
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float{
+            0%{
+                transform: translateY(0px);
+            }
+            50%{
+                transform: translateY(-15px);
+            }
+            100%{
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-card">
+
+        <div class="floating">
+            <div class="error-icon">
+                🛒
+            </div>
+        </div>
+
+        <h1 class="error-code">
+            404
+        </h1>
+
+        <h2 class="fw-bold mb-3">
+            Página no encontrada
+        </h2>
+
+        <p class="text-muted mb-4">
+            Lo sentimos, la página que buscas no existe o fue movida.
+        </p>
+
+        <a href="index.php" class="btn btn-home">
+            Volver al inicio
+        </a>
+
+    </div>
+
+</body>
+</html>

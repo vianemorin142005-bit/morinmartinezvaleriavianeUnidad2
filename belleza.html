@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belleza y Cuidado Personal</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background-color:#f4f6f9;
+        }
+
+        .hero{
+            background: linear-gradient(135deg,#ff4d8d,#ff8fb3);
+            color:white;
+            padding:70px 20px;
+            text-align:center;
+        }
+
+        .card-producto{
+            border:none;
+            border-radius:15px;
+            transition:.3s;
+        }
+
+        .card-producto:hover{
+            transform: translateY(-6px);
+            box-shadow:0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn-belleza{
+            background:#ff4d8d;
+            color:white;
+        }
+
+        .btn-belleza:hover{
+            background:#e63e7a;
+        }
+
+        img{
+            border-radius:15px 15px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color: #1f1cff;">
+    <div class="container-fluid">
+
+     
+        <a class="navbar-brand fw-bold fs-4" href="#">
+            🛒 Online Store
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+            <ul class="navbar-nav me-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Inicio</a>
+                </li>
+
+        <div class="ms-auto d-flex align-items-center gap-3">
+
+                <a href="registro.php" class="nav-link text-white">
+                    Crear Cuenta
+                </a>
+
+                <a href="login.php" class="nav-link text-white">
+                    Ingresar
+                </a>
+
+            </div>
+
+       
+    </div>
+</nav>
+
+<section class="text-center p-5">
+    <h1>💄 Belleza y Cuidado Personal</h1>
+    <p>Descubre los mejores productos para tu rutina diaria</p>
+</section>
+
+<div class="container mb-5">
+
+    <div class="row g-4">
+
+        <!-- Producto 1 -->
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348" class="img-fluid">
+                <div class="card-body text-center">
+                    <h6>Crema Facial</h6>
+                    <p>$199 MXN</p>
+                    <a href="#" class="btn btn-primary btn-sm">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_811643-MLA106117369054_022026-F.webp" class="img-fluid">
+                <div class="card-body text-center">
+                    <h6>Labial Mate</h6>
+                    <p>$149 MXN</p>
+                    <a href="#" class="btn btn-primary btn-sm">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_792729-MLU76221806567_052024-F.webp" class="img-fluid">
+                <div class="card-body text-center">
+                    <h6>L’Oréal Paris Glycolic Bright Crema de Noche 50 ml Antimanchas
+</h6>
+                    <p>$219 MXN</p>
+                    <a href="#" class="btn btn-primary btn-sm">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1612810436541-336d8a3c1c24" class="img-fluid">
+                <div class="card-body text-center">
+                    <h6>Gloss Brillante</h6>
+                    <p>$129 MXN</p>
+                    <a href="#" class="btn btn-primary btn-sm">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1611930022073-84b4b5f9f1b4" class="img-fluid">
+                <div class="card-body text-center">
+                    <h6>Perfume Floral</h6>
+                    <p>$599 MXN</p>
+                    <a href="#" class="btn btn-primary btn-sm">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04" class="img-fluid">
+                <div class="card-body text-center">
+                    <h6>Crema Anti-edad</h6>
+                    <p>$349 MXN</p>
+                    <a href="#" class="btn btn-primary btn-sm">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1620916566395-39f1143ab7c1" class="img-fluid">
+                <div class="card-body text-center">
+                    <h6>Paleta Sombras</h6>
+                    <p>$279 MXN</p>
+                    <a href="#" class="btn btn-primary btn-sm">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1616683693504-3ea7e8d4f4c7" class="img-fluid">
+                <div class="card-body text-center">
+                    <h6>Serum Facial</h6>
+                    <p>$399 MXN</p>
+                    <a href="#" class="btn btn-primary btn-sm">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
