@@ -32,7 +32,7 @@ session_start();
     <div class="container-fluid">
 
      
-        <a class="navbar-brand fw-bold fs-4" href="#">
+        <a class="navbar-brand fw-bold fs-4" href="index.php">
             🛒 Online Store
         </a>
 
@@ -63,6 +63,7 @@ session_start();
 
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="oferta.php">Ofertas</a></li>
+                         <li><a class="dropdown-item" href="favoritos.php">Favoritos</a></li>
                     </ul>
                 </li>
 
@@ -138,73 +139,101 @@ session_start();
         <br>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
 
-        <div class="col">
-            <div class="card border-0 h-100 shadow-sm">
-                <img src="https://http2.mlstatic.com/D_NQ_NP_728013-MLU70713816690_072023-O.webp"
-                    class="card-img-top" alt="">
-                <div class="card-body">
-                      <h5 class="card-title">
+       <div class="col">
+    <div class="card border-0 h-100 shadow-sm">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_728013-MLU70713816690_072023-O.webp"
+            class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">
                 <a href="camara.html" class="text-dark text-decoration-none">
                     Cámara de Seguridad con alarma
                 </a>
             </h5>
-                    <p class="text-decoration-line-through">$983.45</p>
-                    <h5>$297</h5>
-                    <p><small class="text-primary">69% OFF en 6 meses sin intereses en $49</small></p>
-                </div>
-            </div>
+
+            <p class="text-decoration-line-through">$983.45</p>
+            <h5>$297</h5>
+
+            <p><small class="text-primary">69% OFF en 6 meses sin intereses en $49</small></p>
+
+            <button class="btn btn-outline-danger btn-sm mt-2"
+                onclick="agregarFavorito('Cámara de Seguridad con alarma', 297, 'https://http2.mlstatic.com/D_NQ_NP_728013-MLU70713816690_072023-O.webp')">
+                ❤️ Favorito
+            </button>
         </div>
+    </div>
+</div>
+
+       <div class="col">
+    <div class="card border-0 h-100 shadow-sm">
+        <img src="https://m.media-amazon.com/images/I/71eOlLE22YL.AC_UF894,1000_QL80.jpg"
+            class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="iphone.html" class="text-dark text-decoration-none">
+                    Apple iPhone 13 Pro Max 128GB
+                </a>
+            </h5>
+
+            <p class="text-decoration-line-through">$13,586</p>
+            <h5>$12,493</h5>
+
+            <p><small class="text-primary">25% OFF en 12 meses sin intereses en $1,041</small></p>
+
+            <button class="btn btn-outline-danger btn-sm mt-2"
+                onclick="agregarFavorito('iPhone 13 Pro Max 128GB', 12493, 'https://m.media-amazon.com/images/I/71eOlLE22YL.AC_UF894,1000_QL80.jpg')">
+                ❤️ Favorito
+            </button>
+        </div>
+    </div>
+</div>
 
         <div class="col">
-            <div class="card border-0 h-100 shadow-sm">
-                <img src="https://m.media-amazon.com/images/I/71eOlLE22YL.AC_UF894,1000_QL80.jpg"
-                    class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">
-                    <a href="iphone.html" class="text-dark text-decoration-none">
-                        Apple iPhone 13 Pro Max 128GB
-                    </a>
-                    </h5>
-                    <p class="text-decoration-line-through">$13,586</p>
-                    <h5>$12,493</h5>
-                    <p><small class="text-primary">25% OFF en 12 meses sin intereses en $1,041</small></p>
-                </div>
-            </div>
-        </div>
+    <div class="card border-0 h-100 shadow-sm">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_694480-MLA100038495791_122025-F.webp"
+            class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="reloj.html" class="text-dark text-decoration-none">
+                    Reloj Inteligente Smart Watch
+                </a>
+            </h5>
 
-        <div class="col">
-            <div class="card border-0 h-100 shadow-sm">
-                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_694480-MLA100038495791_122025-F.webp"
-                    class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">
-                    <a href="reloj.html" class="text-dark text-decoration-none">
-                        Reloj Inteligente Smart Watch
-                    </a>
-                    </h5>
-                    <p class="text-decoration-line-through">$3,385</p>
-                    <h5>$1,999</h5>
-                    <p><small class="text-primary">40% OFF en 24x $120</small></p>
-                </div>
-            </div>
-        </div>
+            <p class="text-decoration-line-through">$3,385</p>
+            <h5>$1,999</h5>
 
-        <div class="col">
-            <div class="card border-0 h-100 shadow-sm">
-                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQdlm55yXBH8nS3lBmPN4ADo1IwvmUVl7eVcgqzhECC6nf7FI79NRqwkCcFZXhvv05cp3r9O2W_K7ye-qjVX2lxFUdmF2H4Wjb02YveebpiZXmzhTan_so9&usqp=CAE"
-                    class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">
-                    <a href="xbox.html" class="text-dark text-decoration-none">
-                        Consola Microsoft Xbox Series X 1TB
-                    </a>
-                    </h5>
-                    <p class="text-decoration-line-through">$8,999</p>
-                    <h5>$8,599</h5>
-                    <p><small class="text-primary">4% OFF en 18 meses sin intereses en $477</small></p>
-                </div>
-            </div>
+            <p><small class="text-primary">40% OFF en 24x $120</small></p>
+
+            <button class="btn btn-outline-danger btn-sm mt-2"
+                onclick="agregarFavorito('Smart Watch', 1999, 'https://http2.mlstatic.com/D_NQ_NP_2X_694480-MLA100038495791_122025-F.webp')">
+                ❤️ Favorito
+            </button>
         </div>
+    </div>
+</div>
+
+       <div class="col">
+    <div class="card border-0 h-100 shadow-sm">
+        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQdlm55yXBH8nS3lBmPN4ADo1IwvmUVl7eVcgqzhECC6nf7FI79NRqwkCcFZXhvv05cp3r9O2W_K7ye-qjVX2lxFUdmF2H4Wjb02YveebpiZXmzhTan_so9&usqp=CAE"
+            class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="xbox.html" class="text-dark text-decoration-none">
+                    Consola Microsoft Xbox Series X 1TB
+                </a>
+            </h5>
+
+            <p class="text-decoration-line-through">$8,999</p>
+            <h5>$8,599</h5>
+
+            <p><small class="text-primary">4% OFF en 18 meses sin intereses en $477</small></p>
+
+            <button class="btn btn-outline-danger btn-sm mt-2"
+                onclick="agregarFavorito('Xbox Series X', 8599, 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQdlm55yXBH8nS3lBmPN4ADo1IwvmUVl7eVcgqzhECC6nf7FI79NRqwkCcFZXhvv05cp3r9O2W_K7ye-qjVX2lxFUdmF2H4Wjb02YveebpiZXmzhTan_so9&usqp=CAE')">
+                ❤️ Favorito
+            </button>
+        </div>
+    </div>
+</div>
 
     </div>
 </div>
@@ -340,6 +369,22 @@ function actualizarHistorial(){
 }
 
 actualizarHistorial();
+          
+     function agregarFavorito(nombre, precio, imagen){
+
+    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+    favoritos.push({
+        nombre,
+        precio,
+        imagen
+    });
+
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+
+    alert("Producto agregado a favoritos ❤️");
+
+}     
 </script>
 </body>
 </html>
