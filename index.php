@@ -63,7 +63,8 @@ session_start();
 
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="oferta.php">Ofertas</a></li>
-                         <li><a class="dropdown-item" href="favoritos.php">Favoritos</a></li>
+                        <li><a class="dropdown-item" href="favoritos.php">Favoritos</a></li>
+                        <li><a class="dropdown-item" href="promoexterna.php">Promociones Externas</a></li>
                     </ul>
                 </li>
 
