@@ -132,7 +132,7 @@ async function cargarOfertas(){
 
     productos.innerHTML="";
 
-    // -------- FUNCIÓN ASÍNCRONA --------
+
 
     await new Promise(resolve=>setTimeout(resolve,2500));
 
