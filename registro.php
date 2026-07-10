@@ -1,4 +1,11 @@
 <?php
+require_once 'config/security.php';
+session_start();
+
+if (isset($_SESSION['sessionstatus']) && $_SESSION['sessionstatus'] === true){
+header("Location: index.php");
+exit();
+}
 require 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -66,33 +73,7 @@ $stmt->execute([
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color: #1f1cff;">
-    <div class="container-fluid">
-
-     
-        <a class="navbar-brand fw-bold fs-4" href="index.php">
-            🛒 Online Store
-        </a>
-
-        <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      
-            <ul class="navbar-nav me-4">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
-                </li>
-
-
-
-       
-    </div>
-</nav>
+ <?php include 'header.php'; ?>
 
 
     <div class="container">

@@ -1,4 +1,6 @@
+<?php require_once 'config/security.php'; ?>
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -74,25 +76,7 @@ animation:aparecer .8s;
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
-
-<div class="container">
-
-<a class="navbar-brand" href="index.php">
-
-🛒 Online Store
-
-</a>
-
-<a href="index.php" class="btn btn-light">
-
-Regresar
-
-</a>
-
-</div>
-
-</nav>
+ <?php include 'header.php'; ?>
 
 <div class="container mt-5">
 

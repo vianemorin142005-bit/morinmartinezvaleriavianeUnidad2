@@ -1,4 +1,5 @@
 <?php
+require_once 'config/security.php';
 require 'db.php';
 
 $sql = "SELECT * FROM contacto";
@@ -51,43 +52,7 @@ $mensajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color: #1f1cff;">
-    <div class="container-fluid">
-
-     
-        <a class="navbar-brand fw-bold fs-4" href="#">
-            🛒 Online Store
-        </a>
-
-        <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      
-            <ul class="navbar-nav me-4">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
-                </li>
-
-        <div class="ms-auto d-flex align-items-center gap-3">
-
-                <a href="registro.php" class="nav-link text-white">
-                    Crear Cuenta
-                </a>
-
-                <a href="login.php" class="nav-link text-white">
-                    Ingresar
-                </a>
-
-            </div>
-
-       
-    </div>
-</nav>
+ <?php include 'header.php'; ?>
 
 <div class="container contenedor">
 

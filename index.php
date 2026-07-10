@@ -1,4 +1,5 @@
 <?php
+require_once 'config/security.php';
 session_start();
 ?>
 <!DOCTYPE html>
@@ -28,89 +29,7 @@ session_start();
     </style>
 </head>
 <body>
- <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color: #1f1cff;">
-    <div class="container-fluid">
-
-     
-        <a class="navbar-brand fw-bold fs-4" href="index.php">
-            🛒 Online Store
-        </a>
-
-        <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      
-            <ul class="navbar-nav me-4">
-                <li class="nav-item">
-                    <a class="nav-link" href="buzon.php">Buzon</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="mensaje.html">chat</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"
-                        href="#"
-                        data-bs-toggle="dropdown">
-                        Categorías
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="oferta.php">Ofertas</a></li>
-                        <li><a class="dropdown-item" href="favoritos.php">Favoritos</a></li>
-                        <li><a class="dropdown-item" href="promoexterna.php">Promociones Externas</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="ayuda.php">Ayuda</a>
-                </li>
-            </ul>
-
-          <form class="d-flex mx-auto w-50" onsubmit="buscarProducto(event)">
-    <input
-        id="buscador"
-        class="form-control me-2 rounded-pill"
-        type="search"
-        placeholder="Buscar productos, marcas y más..."
-        list="historial">
-
-    <datalist id="historial"></datalist>
-</form>
-
-        <div class="d-flex align-items-center gap-3">
-
-    <?php if(isset($_SESSION["id"])): ?>
-
-        <span class="text-white fw-bold">
-            👤 <?php echo htmlspecialchars($_SESSION["user"]); ?>
-        </span>
-
-        <a href="logout.php" class="btn btn-outline-light btn-sm">
-            Cerrar Sesión
-        </a>
-
-    <?php else: ?>
-
-        <a href="registro.php" class="btn text-white">
-            Crear Cuenta
-        </a>
-
-        <a href="login.php" class="btn text-white">
-            Ingresar
-        </a>
-
-    <?php endif; ?>
-
-</div>
-    </div>
-</nav>
+ <?php include 'header.php'; ?>
     <div id="carouselExampleSlidesOnly"
      class="carousel slide"
      data-bs-ride="carousel"
@@ -146,7 +65,7 @@ session_start();
             class="card-img-top" alt="">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="camara.html" class="text-dark text-decoration-none">
+                <a href="camara.php" class="text-dark text-decoration-none">
                     Cámara de Seguridad con alarma
                 </a>
             </h5>
@@ -170,7 +89,7 @@ session_start();
             class="card-img-top" alt="">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="iphone.html" class="text-dark text-decoration-none">
+                <a href="iphone.php" class="text-dark text-decoration-none">
                     Apple iPhone 13 Pro Max 128GB
                 </a>
             </h5>
@@ -194,7 +113,7 @@ session_start();
             class="card-img-top" alt="">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="reloj.html" class="text-dark text-decoration-none">
+                <a href="reloj.php" class="text-dark text-decoration-none">
                     Reloj Inteligente Smart Watch
                 </a>
             </h5>
@@ -218,7 +137,7 @@ session_start();
             class="card-img-top" alt="">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="xbox.html" class="text-dark text-decoration-none">
+                <a href="xbox.php" class="text-dark text-decoration-none">
                     Consola Microsoft Xbox Series X 1TB
                 </a>
             </h5>
@@ -338,16 +257,16 @@ function buscarProducto(event){
 
   
     if(valor.includes("iphone")){
-        window.location.href = "iphone.html";
+        window.location.href = "iphone.php";
     }
     else if(valor.includes("camara")){
-        window.location.href = "camara.html";
+        window.location.href = "camara.php";
     }
     else if(valor.includes("reloj")){
-        window.location.href = "reloj.html";
+        window.location.href = "reloj.php";
     }
     else if(valor.includes("xbox")){
-        window.location.href = "xbox.html";
+        window.location.href = "xbox.php";
     }
     else {
         alert("Producto no encontrado");

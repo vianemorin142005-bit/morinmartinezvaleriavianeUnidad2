@@ -1,3 +1,14 @@
+<?php
+require_once 'config/security.php';
+session_start();
+
+if (!isset($_SESSION['sessionstatus'])){
+header("Location: index.php");
+exit();
+}else{
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -50,37 +61,7 @@ padding:15px;
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
-
-<div class="container">
-
-<a class="navbar-brand" href="index.php">
-
-🛒 Online Store
-
-</a>
-
-<div>
-
-<a href="index.php" class="btn btn-light">
-
-Inicio
-
-</a>
-
-<button
-class="btn btn-danger"
-onclick="limpiarFavoritos()">
-
-Vaciar Favoritos
-
-</button>
-
-</div>
-
-</div>
-
-</nav>
+ <?php include 'header.php'; ?>
 
 <div class="container mt-5">
 

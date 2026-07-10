@@ -1,4 +1,5 @@
 <?php
+require_once 'config/security.php';
 require 'db.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
