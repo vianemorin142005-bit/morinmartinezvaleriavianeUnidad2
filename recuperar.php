@@ -1,5 +1,7 @@
 <?php
 require_once 'config/security.php';
+require_once 'config/session.php';
+require_once 'config/csrf.php';
 require 'db.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){

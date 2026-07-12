@@ -1,6 +1,8 @@
 <?php
 require_once 'config/security.php';
-session_start();
+require_once 'config/session.php';
+require_once 'config/csrf.php';
+require_once 'config/logger.php';
 
 if (isset($_SESSION['sessionstatus']) && $_SESSION['sessionstatus'] === true){
 header("Location: index.php");
@@ -9,6 +11,8 @@ exit();
 require 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    csrf_verify();
 
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -36,6 +40,7 @@ $stmt->execute([
     ":user" => $user,
     ":password" => $passwordHash
 ]);
+securityLog("Registro de nuevo usuario", $user);
     echo "✅ Usuario registrado correctamente";
 }
 ?>
@@ -85,6 +90,7 @@ $stmt->execute([
                 </h2>
 
                 <form action="registro.php" method="POST">
+                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8'); ?>">
 
                     <div class="mb-3">
                         <label class="form-label">Nombre Completo</label>

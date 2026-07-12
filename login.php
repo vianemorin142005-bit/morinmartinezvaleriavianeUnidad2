@@ -1,16 +1,22 @@
 <?php
 require_once 'config/security.php';
-session_start();
+require_once 'config/session.php';
+require_once 'config/csrf.php';
+require_once 'config/logger.php';
 
-if (isset($_SESSION['sessionstatus']) && $_SESSION['sessionstatus'] === true){
-header("Location: index.php");
-exit();
+if (isset($_SESSION['sessionstatus']) && $_SESSION['sessionstatus'] === true) {
+    header("Location: index.php");
+    exit();
 }
+
 require 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $email = $_POST["email"];
+    // Verificar token CSRF
+    csrf_verify();
+
+    $email = trim($_POST["email"]);
     $password = $_POST["password"];
 
     $sql = "SELECT * FROM registro WHERE email = :email";
@@ -26,21 +32,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($password, $usuario["password"])) {
 
+            session_regenerate_id(true);
+
             $_SESSION["id"] = $usuario["id"];
             $_SESSION["name"] = $usuario["name"];
             $_SESSION["user"] = $usuario["user"];
             $_SESSION["email"] = $usuario["email"];
-            $_SESSION["sessionstatus"] = true ;
+            $_SESSION["sessionstatus"] = true;
+
+            securityLog("Inicio de sesión exitoso", $usuario["user"]);
 
             header("Location: index.php");
             exit();
 
         } else {
+
             $error = "Contraseña incorrecta";
+
+            securityLog("Contraseña incorrecta", $usuario["user"]);
         }
 
     } else {
+
         $error = "Usuario no encontrado";
+
+        securityLog("Usuario no encontrado", $email);
     }
 }
 ?>
@@ -79,8 +95,7 @@ body{
 </head>
 <body>
 
- <?php include 'header.php'; ?>
-
+<?php include 'header.php'; ?>
 
 <div class="container">
 
@@ -94,46 +109,53 @@ body{
 
             <?php if(isset($error)): ?>
                 <div class="alert alert-danger">
-                    <?php echo $error; ?>
+                    <?= htmlspecialchars($error); ?>
                 </div>
             <?php endif; ?>
 
             <form method="POST">
 
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    value="<?= htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8'); ?>">
+
                 <div class="mb-3">
                     <label>Correo Electrónico</label>
-                    <input type="email"
-                           name="email"
-                           class="form-control"
-                           required>
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        required>
                 </div>
 
                 <div class="mb-3">
                     <label>Contraseña</label>
-                    <input type="password"
-                           name="password"
-                           class="form-control"
-                           required>
+                    <input
+                        type="password"
+                        name="password"
+                        class="form-control"
+                        required>
                 </div>
 
-                <button class="btn btn-login w-100">
+                <button type="submit" class="btn btn-login w-100">
                     Ingresar
                 </button>
 
             </form>
 
-           <div class="text-center mt-3">
-    <a href="recuperar.php" class="text-decoration-none">
-        ¿Olvidaste tu contraseña?
-    </a>
-</div>
+            <div class="text-center mt-3">
+                <a href="recuperar.php" class="text-decoration-none">
+                    ¿Olvidaste tu contraseña?
+                </a>
+            </div>
 
-<p class="text-center mt-3">
-    ¿No tienes cuenta?
-    <a href="registro.php">
-        Crear cuenta
-    </a>
-</p>
+            <p class="text-center mt-3">
+                ¿No tienes cuenta?
+                <a href="registro.php">
+                    Crear cuenta
+                </a>
+            </p>
 
         </div>
 

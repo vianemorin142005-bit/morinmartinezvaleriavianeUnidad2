@@ -1,0 +1,10 @@
+[2026-07-11 20:54:30] [CIERRE DE SESIóN] Usuario: Invitado | IP: ::1 | Método: GET | URL: /logout.php | Evento: JonathanDVC1
+[2026-07-11 20:54:51] [CONTRASEñA INCORRECTA] Usuario: Invitado | IP: ::1 | Método: POST | URL: /login.php | Evento: 
+[2026-07-11 20:55:02] [INICIO DE SESIóN EXITOSO] Usuario: Invitado | IP: ::1 | Método: POST | URL: /login.php | Evento: 
+[2026-07-11 20:55:10] [CIERRE DE SESIóN] Usuario: Invitado | IP: ::1 | Método: GET | URL: /logout.php | Evento: JonathanDVC1
+[2026-07-11 20:55:16] [CONTRASEñA INCORRECTA] Usuario: Invitado | IP: ::1 | Método: POST | URL: /login.php | Evento: 
+[2026-07-11 21:09:37] [CRITICAL] Usuario: Invitado | IP: ::1 | Método: POST | URL: /login.php | Evento: Intento de ataque CSRF bloqueado
+[2026-07-11 21:11:06] [CONTRASEñA INCORRECTA] Usuario: Invitado | IP: ::1 | Método: POST | URL: /login.php | Evento: JonathanDVC
+[2026-07-11 21:15:46] [CONTRASEñA INCORRECTA] Usuario: Invitado | IP: ::1 | Método: POST | URL: /login.php | Evento: JonathanDVC1
+[2026-07-11 21:15:55] [USUARIO NO ENCONTRADO] Usuario: Invitado | IP: ::1 | Método: POST | URL: /login.php | Evento: 23040136@alumno.utc.edu.mx
+[2026-07-11 21:17:20] [INICIO DE SESIóN EXITOSO] Usuario: Invitado | IP: ::1 | Método: POST | URL: /login.php | Evento: JonathanDVC1

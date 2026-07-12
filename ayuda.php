@@ -1,6 +1,7 @@
 <?php
 require_once 'config/security.php';
-require 'db.php';
+require_once 'config/session.php';
+require_once 'config/csrf.php';
 
 $alerta = "";
 

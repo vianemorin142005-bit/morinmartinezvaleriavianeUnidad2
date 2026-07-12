@@ -1,6 +1,7 @@
 <?php
 require_once 'config/security.php';
-session_start();
+require_once 'config/session.php';
+require_once 'config/csrf.php';
 
 if (!isset($_SESSION['sessionstatus'])){
 header("Location: index.php");

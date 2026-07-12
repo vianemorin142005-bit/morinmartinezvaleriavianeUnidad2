@@ -1,6 +1,9 @@
 <?php
 require_once 'config/security.php';
+require_once 'config/session.php';
+require_once 'config/csrf.php';
 require 'db.php';
+
 
 $sql = "SELECT * FROM contacto";
 $stmt = $pdo->prepare($sql);

@@ -1,6 +1,7 @@
 <?php
 require_once 'config/security.php';
-session_start();
+require_once 'config/session.php';
+require_once 'config/csrf.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">

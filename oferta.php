@@ -1,4 +1,8 @@
-<?php require_once 'config/security.php'; ?>
+<?php 
+require_once 'config/security.php';
+require_once 'config/session.php';
+require_once 'config/csrf.php';
+?>
 <!DOCTYPE html>
 
 <html lang="es">
